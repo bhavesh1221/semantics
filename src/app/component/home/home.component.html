@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-4 text-center">
+           <h2 class="text-danger">State-Wise View</h2>
+           <ul>
+            <li (click)="onStateClick(item.name)" *ngFor="let item of jsonStates"> {{ item.name }} </li>
+           </ul>
+        </div>
+
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Districts</th>
+                    <th>Confirmed</th>
+                    <th>Recovered</th>
+                    <th>Deaths</th>
+                    <th>Tested</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                    <tr *ngFor="let item of filteredStates">
+                        <td> 
+                           {{item.district_name}}
+                        </td> 
+                        <td> 
+                            {{item.total?.recovered}}
+                         </td> 
+                         <td> 
+                            {{item.total?.tested}}
+                         </td> 
+                         
+                         <td> 
+                            {{item.total?.vaccinated1}}
+                         </td> 
+                         <td> 
+                            {{item.total?.vaccinated2}}
+                         </td> 
+                    </tr>
+                    
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+  
+</div>
+
